@@ -1,24 +1,34 @@
 <template>
   <div id="app">
-    <img width="25%" src="./assets/logo.png">
-    <HelloWorld/>
+    <AlbumsMenu/>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import AlbumsMenu from "./components/AlbumsMenu";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    AlbumsMenu
   }
 };
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  overflow: auto;
+}
 body {
+  position: relative;
   background: white;
+  margin: 0;
+  height: 100%;
+  overflow: auto;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -26,6 +36,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
 }
 </style>
