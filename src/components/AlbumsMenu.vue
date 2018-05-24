@@ -18,12 +18,32 @@
 </template>
 
 <script>
+import * as Vibrant from "node-vibrant";
+
 export default {
   name: "AlbumsMenu",
   data() {
     return {
       msg: "Albums goes here!"
     };
+  },
+  mounted: function() {
+    var img = document.createElement("img");
+    img.setAttribute(
+      "src",
+      "https://d24jnm9llkb1ub.cloudfront.net/icpn/00028947981039/00028947981039-cover-225.jpg"
+    );
+
+    img.addEventListener("load", function() {
+      var vibrant = Vibrant.from(img);
+      console.log(vibrant);
+      var swatches = vibrant.getPalette();
+      // for (var swatch in swatches)
+      //     if (swatches.hasOwnProperty(swatch) && swatches[swatch])
+      //         console.log(swatch, swatches[swatch].getHex())
+      console.log(swatches);
+    });
+    // Vibrant.from('https://d24jnm9llkb1ub.cloudfront.net/icpn/00028947981039/00028947981039-cover-225.jpg').getPalette((err, palette) => console.log(palette))
   }
 };
 </script>
@@ -51,6 +71,7 @@ ul li {
   display: inline-block;
   padding: 0 10px 0;
   width: 25%;
+  max-width: 160px;
   // width: 80%;
 }
 
